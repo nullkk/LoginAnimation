@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.fab:
+
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setExitTransition(null);
                     getWindow().setEnterTransition(null);
@@ -52,17 +53,12 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     startActivity(new Intent(this, RegisterActivity.class));
                 }
-
-
                 break;
+
             case R.id.bt_go:
-                //
-
-
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Explode explode = new Explode();
                     explode.setDuration(500);
-
                     getWindow().setExitTransition(explode);
                     getWindow().setEnterTransition(explode);
                     ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(this);
@@ -72,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(this, LoginSuccessActivity.class));
                 }
                 break;
+
             default:
                 break;
         }

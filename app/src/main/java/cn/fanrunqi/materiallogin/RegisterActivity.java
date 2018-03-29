@@ -34,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
             ShowEnterAnimation();
         }
 
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    //进入动画
     private void ShowEnterAnimation() {
         Transition transition = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -84,6 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
+
     public void animateRevealShow() {
         Animator mAnimator = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
@@ -110,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void animateRevealClose() {
         Animator mAnimator = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd, cvAdd.getWidth() / 2, 0, fab.getHeight(), cvAdd.getWidth() / 2);
+            mAnimator = ViewAnimationUtils.createCircularReveal(cvAdd, cvAdd.getWidth() / 2, 0, cvAdd.getHeight(), fab.getWidth() / 2);
 
             mAnimator.setDuration(500);
             mAnimator.setInterpolator(new AccelerateInterpolator());
@@ -129,6 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             });
             mAnimator.start();
+
         }
     }
 
